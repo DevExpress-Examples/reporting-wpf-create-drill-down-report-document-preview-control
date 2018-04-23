@@ -1,0 +1,11 @@
+﻿<dx:DXWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxp="http://schemas.devexpress.com/winfx/2008/xaml/printing" x:Class="dxWPFApp.MainWindow"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button Content="Show preview" HorizontalAlignment="Left" Height="144" VerticalAlignment="Top" Width="191" Margin="137,77,0,0" Click="Button_Click"/>
+    </Grid>
+</dx:DXWindow>
