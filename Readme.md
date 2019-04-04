@@ -2,7 +2,7 @@
 *Files to look at*:
 
 * [MainWindow.xaml](./CS/dxWPFApp/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/dxWPFApp/MainWindow.xaml))
-* [MainWindow.xaml.cs](./CS/dxWPFApp/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/dxWPFApp/MainWindow.xaml))
+* [MainWindow.xaml.cs](./CS/dxWPFApp/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/dxWPFApp/MainWindow.xaml.vb))
 <!-- default file list end -->
 # DocumentPreviewControl - How to: Create a Drill-Down Report (Runtime Sample) 
 
