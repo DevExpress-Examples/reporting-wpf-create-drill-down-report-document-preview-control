@@ -101,7 +101,7 @@ Namespace dxWPFApp
 				Dim cell As New XRTableCell()
 				cell.DataBindings.Add(New XRBinding("Text", Nothing, String.Format("{0}.{1}", dataMember, col.Name)))
 				If col.Name = "CategoryName" Then
-					cell.Font = New System.Drawing.Font(cell.Font.FontFamily, 14F, System.Drawing.FontStyle.Underline Or System.Drawing.FontStyle.Bold)
+					cell.Font = New DevExpress.Drawing.DXFont(cell.Font.Name, 14F, DevExpress.Drawing.DXFontStyle.Underline Or DevExpress.Drawing.DXFontStyle.Bold)
 					cell.DataBindings.Add(New XRBinding("Tag", Nothing, String.Format("{0}.{1}", dataMember, "CategoryID")))
 					cell.ForeColor = System.Drawing.Color.Blue
 					cell.NavigateUrl = " "
@@ -121,7 +121,7 @@ Namespace dxWPFApp
 			detailBand.PageBreak = PageBreak.AfterBand
 			detailBand.Controls.Add(tbl)
 		End Sub
-		Private Sub tbl_BeforePrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs)
+		Private Sub tbl_BeforePrint(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs)
 			Dim table As XRTable = (DirectCast(sender, XRTable))
 			table.LocationF = New DevExpress.Utils.PointFloat(0F, 0F)
 
@@ -169,7 +169,7 @@ Namespace dxWPFApp
 			Dim titleLbl As New XRLabel() With {
 				.LocationF = New System.Drawing.PointF(0, 0),
 				.SizeF = New System.Drawing.SizeF(600, 30),
-				.Font = New System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic),
+				.Font = New DevExpress.Drawing.DXFont("Arial", 18F, DevExpress.Drawing.DXFontStyle.Bold Or DevExpress.Drawing.DXFontStyle.Italic),
 				.ForeColor = System.Drawing.Color.Red
 			}
 			titleLbl.DataBindings.Add(New XRBinding(report.Parameters("catNameParam"), "Text", "Details for {0} category"))
@@ -185,7 +185,7 @@ Namespace dxWPFApp
 				.LocationF = New System.Drawing.PointF(0, 0),
 				.SizeF = New System.Drawing.SizeF(400, 30),
 				.Text = "Back to categories",
-				.Font = New System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline),
+				.Font = New DevExpress.Drawing.DXFont("Arial", 16F, DevExpress.Drawing.DXFontStyle.Bold Or DevExpress.Drawing.DXFontStyle.Italic Or DevExpress.Drawing.DXFontStyle.Underline),
 				.NavigateUrl = " ",
 				.ForeColor = System.Drawing.Color.Blue
 			}

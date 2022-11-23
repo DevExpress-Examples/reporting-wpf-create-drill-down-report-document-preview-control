@@ -98,7 +98,7 @@ namespace dxWPFApp
                 XRTableCell cell = new XRTableCell();
                 cell.DataBindings.Add(new XRBinding("Text", null, string.Format("{0}.{1}", dataMember, col.Name)));
                 if (col.Name == "CategoryName") {
-                    cell.Font = new System.Drawing.Font(cell.Font.FontFamily, 14f, System.Drawing.FontStyle.Underline | System.Drawing.FontStyle.Bold);                    
+                    cell.Font = new DevExpress.Drawing.DXFont(cell.Font.Name, 14f, DevExpress.Drawing.DXFontStyle.Underline | DevExpress.Drawing.DXFontStyle.Bold);                    
                     cell.DataBindings.Add(new XRBinding("Tag", null, string.Format("{0}.{1}", dataMember, "CategoryID")));
                     cell.ForeColor = System.Drawing.Color.Blue;
                     cell.NavigateUrl = " "; 
@@ -118,7 +118,7 @@ namespace dxWPFApp
             detailBand.PageBreak = PageBreak.AfterBand;
             detailBand.Controls.Add(tbl);
         }
-        void tbl_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e) {
+        void tbl_BeforePrint(object sender, System.ComponentModel.CancelEventArgs e) {
             XRTable table = ((XRTable)sender);
             table.LocationF = new DevExpress.Utils.PointFloat(0F, 0F);
             
@@ -165,7 +165,7 @@ namespace dxWPFApp
             XRLabel titleLbl = new XRLabel() {
                 LocationF = new System.Drawing.PointF(0, 0),
                 SizeF = new System.Drawing.SizeF(600, 30),                
-                Font = new System.Drawing.Font("Arial", 18f, System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic),
+                Font = new DevExpress.Drawing.DXFont("Arial", 18f, DevExpress.Drawing.DXFontStyle.Bold | DevExpress.Drawing.DXFontStyle.Italic),
                 ForeColor = System.Drawing.Color.Red
             };
             titleLbl.DataBindings.Add(new XRBinding(report.Parameters["catNameParam"], "Text", "Details for {0} category"));
@@ -181,7 +181,7 @@ namespace dxWPFApp
                 LocationF = new System.Drawing.PointF(0, 0),
                 SizeF = new System.Drawing.SizeF(400, 30),
                 Text = "Back to categories",
-                Font = new System.Drawing.Font("Arial", 16f, System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline),
+                Font = new DevExpress.Drawing.DXFont("Arial", 16f, DevExpress.Drawing.DXFontStyle.Bold | DevExpress.Drawing.DXFontStyle.Italic | DevExpress.Drawing.DXFontStyle.Underline),
                 NavigateUrl = " ",
                 ForeColor = System.Drawing.Color.Blue
             };
